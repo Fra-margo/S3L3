@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio DOM</title>
+    <link rel="stylesheet" href="style.css">   
+</head>
+<body>
+    <h1>Esercizio per il corretto utilizzo del DOM</h1>
+    <h2>Creare una task list</h2>
+    <form action="">
+        <label for="task">Task da svolgere:</label><br>
+        <input type="text" id="task" name="task">
+        <button type="submit" id="submit-btn">&crarr;</button>
+    </form>
+    <ul id="TaskList">
+        
+    </ul>
+
+    <script>
+        const validazione = (invio) => {
+            invio.preventDefault()
+            const Task = document.getElementById("task").value
+            if(Task === ""){
+                alert("Inserire Task")
+                return false
+            }
+        const ul = document.getElementById("TaskList")
+        const NuovaTask = document.createElement("li")
+        NuovaTask.innerText = "" + document.getElementById("task").value + ""
+        ul.appendChild(NuovaTask)
+        }    
+        const pulsante = document.getElementById("submit-btn")
+        pulsante.addEventListener("click", validazione)
+    
+    </script>
+</body>
+
+</html>
